@@ -49,21 +49,17 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Mã xã</th>
-                      <th>Tên xã</th>
-                      <th>Tên huyện</th>
-                      <th>Tỉnh/Thành phố</th>
+                      <th>Mã đối tượng tuyển sinh</th>
+                      <th>Tên đối tượng tuyển sinh</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <?php if($xas): ?>
-                    <?php foreach($xas as $user): ?>
+                    <?php if($doituongtss): ?>
+                    <?php foreach($doituongtss as $doituongts): ?>
                         <tr>
-                        <td><?php echo $user['id']; ?></td>
-                        <td><?php echo $user['MaXa']; ?></td>
-                        <td><?php echo $user['TenXa']; ?></td>
-                        <td><?php echo $user['TenHuyen']; ?></td>
-                        <td><?php echo $user['TenTinh']; ?></td>
+                        <td><?php echo $doituongts['id']; ?></td>
+                        <td><?php echo $doituongts['MaDoiTuongTS']; ?></td>
+                        <td><?php echo $doituongts['TenDoiTuongTS']; ?></td>
                         <td class="project-actions text-right">
                              <a class="btn btn-info btn-sm" href="#">
                                 <i class="fas fa-pencil-alt">
@@ -88,8 +84,12 @@
           </div>
         </div>
         <?= $pager->makeLinks($page,$perPage, $total, 'custom_view') ?> 
-    </div>
+      </div>
 
     </section>
     <!-- /.content -->
+<?= $this->endSection() ?>
+
+<?= $this->section('custom_js') ?>
+
 <?= $this->endSection() ?>

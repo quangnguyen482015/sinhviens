@@ -79,14 +79,17 @@
                     <?php endif; ?>
                   </tbody>
                 </table>
+               
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
+            
           </div>
         </div>
-      </div>
-
+        <?= $pager->makeLinks($page,$perPage, $total, 'custom_view') ?> 
+    </div>
+            
     </section>
     <!-- /.content -->
 <?= $this->endSection() ?>

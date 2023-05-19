@@ -36,9 +36,16 @@ $routes->get('/dashboard/index2', 'Dashboard::index2');
 $routes->get('/widgets/', 'Widgets::index');
 $routes->get('/tables/simple/', 'Tables::simple');
 $routes->get('/pages/profile/', 'Pages::profile');
+
 $routes->get('/dashboard/tinh/', 'Tinh::index');
 $routes->get('/dashboard/quan-huyen/', 'Huyen::index');
 $routes->get('/dashboard/phuong-xa/', 'Xa::index');
+$routes->get('/dashboard/dan-toc/', 'Dantoc::index');
+$routes->get('/dashboard/ton-giao/', 'Tongiao::index');
+$routes->get('/dashboard/quoc-tich/', 'Quoctich::index');
+$routes->get('/dashboard/khu-vuc/', 'Khuvuc::index');
+$routes->get('/dashboard/doi-tuong-dao-tao/', 'Doituongdt::index');
+$routes->get('/dashboard/doi-tuong-tuyen-sinh/', 'Doituongts::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

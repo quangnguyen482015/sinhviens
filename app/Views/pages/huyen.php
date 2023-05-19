@@ -85,8 +85,13 @@
             <!-- /.card -->
           </div>
         </div>
+        <?= $pager->makeLinks($page,$perPage, $total, 'custom_view') ?> 
       </div>
 
     </section>
     <!-- /.content -->
+<?= $this->endSection() ?>
+
+<?= $this->section('custom_js') ?>
+
 <?= $this->endSection() ?>
