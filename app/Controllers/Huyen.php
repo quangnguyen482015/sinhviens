@@ -9,12 +9,11 @@ class Huyen extends BaseController
     public function index()
     {   
         $huyenmodel = new Huyen_Model();
-        $data['huyens']= $huyenmodel->orderby('id', 'ASEC')->findAll();
         $data['page_header']= 'Danh sách tên huyện';
-        $data['page'] = isset($_GET['page']) ? $_GET['page'] : 1;
         $data['perPage'] = 20;
+        $data['huyens']= $huyenmodel->orderby('id', 'ASEC')->paginate($data['perPage']);
+        $data['page'] = isset($_GET['page']) ? $_GET['page'] : 1;
         $data['total'] = $huyenmodel->countAll();
-        $data['data'] = $huyenmodel->paginate($data['perPage']);
         $data['pager'] = $huyenmodel->pager;
 
         return view('pages/huyen', $data);

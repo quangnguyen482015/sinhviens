@@ -1,5 +1,5 @@
 <!-- Limit to 3 Links each side of the current page -->
-<?php $pager->setSurroundCount(3) ?>
+<?php $pager->setSurroundCount(4) ?>
 <!-- END-->
 
 <div class="row">
@@ -37,10 +37,4 @@
 </ul>
 </div>
 <!-- End of Pagination -->
-
-<!-- Pagination Details -->
-<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-<div class="fw-light fs-italic text-muted text-end">Showing <?= (($page * $perPage) - $perPage +1) ."-". (($page * $perPage) - $perPage + count($data)) ?> Result out of <?= number_format($total) ?></div>
-</div>
-<!-- End of Pagination Details -->
 </div>

@@ -87,7 +87,7 @@
             <!-- /.card -->
           </div>
         </div>
-        <?= $pager->makeLinks($page,$perPage, $total, 'custom_view') ?> 
+        <?= $pager->makeLinks($page,$perPage, $total, 'custom_view') ?>
     </div>
 
     </section>

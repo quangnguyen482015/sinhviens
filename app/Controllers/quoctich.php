@@ -9,13 +9,12 @@ class Quoctich extends BaseController
     public function index()
     {   
         $quoctichmodel = new Quoctich_Model();
-        $data['quoctichs']= $quoctichmodel->orderby('id', 'ASEC')->findAll();
         $data['page_header']= 'Danh sách tên dân tộc';
-        $data['page'] = isset($_GET['page']) ? $_GET['page'] : 1;
         $data['perPage'] = 20;
-        $data['total'] = $quoctichmodel->countAll();
-        $data['data'] = $quoctichmodel->paginate($data['perPage']);
+        $data['quoctichs']= $quoctichmodel->orderby('id', 'ASEC')->paginate($data['perPage']);
         $data['pager'] = $quoctichmodel->pager;
+        $data['page'] = isset($_GET['page']) ? $_GET['page'] : 1;
+        $data['total'] = $quoctichmodel->countAll();  
 
         return view('pages/quoctich', $data);
     }
