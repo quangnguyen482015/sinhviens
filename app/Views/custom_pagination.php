@@ -1,5 +1,5 @@
 <!-- Limit to 3 Links each side of the current page -->
-<?php $pager->setSurroundCount(4) ?>
+<?php $pager->setSurroundCount(3) ?>
 <!-- END-->
 
 <div class="row">
