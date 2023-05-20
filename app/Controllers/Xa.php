@@ -11,7 +11,7 @@ class Xa extends BaseController
         $xamodel = new Xa_Model();        
         $data['page_header']= 'Danh sách tên xã';
         $data['perPage'] = 20;
-        $data['xas']= $xamodel->orderby('id', 'ASEC')->paginate($data['perPage']);
+        $data['xas']= $xamodel->join('huyen', 'huyen.MaHuyen = xa.MaHuyen')->join('tinh', 'tinh.MaTinh = huyen.MaTinh')->paginate($data['perPage']);
         $data['pager'] = $xamodel->pager;
         $data['page'] = isset($_GET['page']) ? $_GET['page'] : 1;
         $data['total'] = $xamodel->countAll();     
