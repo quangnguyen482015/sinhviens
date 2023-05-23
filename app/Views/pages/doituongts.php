@@ -52,7 +52,7 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>TT</th>
                       <th>Mã đối tượng tuyển sinh</th>
                       <th>Tên đối tượng tuyển sinh</th>
                     </tr>

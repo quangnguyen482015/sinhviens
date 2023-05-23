@@ -52,7 +52,7 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>TT</th>
                       <th>Mã khu vực</th>
                       <th>Tên khu vực</th>
                     </tr>
