@@ -1,5 +1,9 @@
 <?= $this->extend('template/admin_template') ?>
 
+<?= $this->section('custom_js_header') ?>
+
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 
 <!-- Content Header (Page header) -->

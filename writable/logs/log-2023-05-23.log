@@ -1,0 +1,10 @@
+CRITICAL - 2023-05-23 02:38:05 --> syntax error, unexpected '?>'
+in APPPATH\Views\pages\tinh.php on line 93.
+ 1 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1184): CodeIgniter\View\View->render('pages/tinh', [], true)
+ 3 APPPATH\Controllers\Tinh.php(19): view('pages/tinh', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\Tinh->index()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Tinh))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\xampp\\htdocs\\sinhvien\\public\\index.php')

@@ -1,5 +1,9 @@
 <?= $this->extend('template/admin_template') ?>
 
+<?= $this->section('custom_js_header') ?>
+
+<?= $this->endSection() ?>
+
 <?= $this->section('content') ?>
 
 <!-- Content Header (Page header) -->
@@ -48,7 +52,7 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      <th>TT</th>
                       <th>Mã quốc tịch</th>
                       <th>Tên quốc tịch</th>
                     </tr>
