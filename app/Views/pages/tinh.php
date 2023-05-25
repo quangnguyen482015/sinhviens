@@ -1,9 +1,6 @@
 <?= $this->extend('template/admin_template') ?>
+
 <?= $this->section('custom_js_header') ?>
- <!-- DataTables -->
-<link rel="stylesheet" href="<?= base_url() ?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-<link rel="stylesheet" href="<?= base_url() ?>plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-<link rel="stylesheet" href="<?= base_url() ?>plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 
 <?= $this->endSection() ?>
 
@@ -24,114 +21,77 @@
           </div>
         </div>
       </div><!-- /.container-fluid -->
-</section>
+    </section>
 
     <!-- Main content -->
-<section class="content">
-      <div class="container-fluid">
+    <section class="content">
+
+    <div class="container-fluid">
         
+        <!-- /.row -->
         <div class="row">
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Danh sách tên tỉnh</h3>
+                <h3 class="card-title"><?php echo $page_header; ?></h3>
+
+                <div class="card-tools">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
                   <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Mã tỉnh</th>
-                    <th>Tên tỉnh</th>
-                    <th>Ngày thêm</th>
-                    <th>Ngày cập nhật</th>
-                    <th>Cập nhật</th>
-                  </tr>
+                    <tr>
+                      <th>Mã tính</th>
+                      <th>Tên tỉnh</th>
+                    </tr>
                   </thead>
                   <tbody>
-				  <?php if($tinhs): ?>
-				<?php foreach($tinhs as $user): ?>
-                  <tr>
-                    <td><?php echo $user['id']; ?></td>
-					<td><?php echo $user['MaTinh']; ?></td>
-					<td><?php echo $user['TenTinh']; ?></td>
-                    <td>AAAAAAAAAAA</td>
-                    <td>BBBBBBBBBBBBB</td>
-					<td class="project-actions text-center">
-						 <a class="btn btn-info btn-sm" href="#">
-							<i class="fas fa-pencil-alt">
-							</i>
-							Edit
-						</a>
-						<a class="btn btn-danger btn-sm" href="#">
-							<i class="fas fa-trash">
-							</i>
-							Delete
-						</a>
-					</td>
-                  </tr>
-				  <?php endforeach; ?>
+                    <?php if($tinhs): ?>
+                    <?php foreach($tinhs as $user): ?>
+                        <tr>
+                        <td><?php echo $user['MaTinh']; ?></td>
+                        <td><?php echo $user['TenTinh']; ?></td>
+                        <td class="project-actions text-right">
+                             <a class="btn btn-info btn-sm" href="#">
+                                <i class="fas fa-pencil-alt">
+                                </i>
+                                Edit
+                            </a>
+                            <a class="btn btn-danger btn-sm" href="#">
+                                <i class="fas fa-trash">
+                                </i>
+                                Delete
+                            </a>
+                        </td>
+                        </tr>
+                    <?php endforeach; ?>
                     <?php endif; ?>
-                 </tbody>
-                  <tfoot>
-				  <tr>
-                    <th>ID</th>
-                    <th>Mã tỉnh</th>
-                    <th>Tên tỉnh</th>
-                    <th>Ngày thêm</th>
-                    <th>Ngày cập nhật</th>
-                    <th>Cập nhật</th>
-                  </tr>
-                  </tfoot>
+                  </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
           </div>
-		  
-          <!-- /.col -->
         </div>
-        <!-- /.row -->
-
+        <?= $pager->makeLinks($page,$perPage, $total, 'custom_view') ?> 
       </div>
-      <!-- /.container-fluid -->
+
     </section>
     <!-- /.content -->
 <?= $this->endSection() ?>
 
 <?= $this->section('custom_js') ?>
-  <!-- DataTables  & Plugins -->
-  <script src="<?= base_url() ?>plugins/datatables/jquery.dataTables.min.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
-  <script src="<?= base_url() ?>plugins/jszip/jszip.min.js"></script>
-  <script src="<?= base_url() ?>plugins/pdfmake/pdfmake.min.js"></script>
-  <script src="<?= base_url() ?>plugins/pdfmake/vfs_fonts.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-buttons/js/buttons.html5.min.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-buttons/js/buttons.print.min.js"></script>
-  <script src="<?= base_url() ?>plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-  <!-- Page specific script -->
-  <script>
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "pageLength": 20,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": true,
-      });
-    });
-  </script>
+
 <?= $this->endSection() ?>

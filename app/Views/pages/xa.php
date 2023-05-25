@@ -52,7 +52,6 @@
                 <table class="table table-hover text-nowrap">
                   <thead>
                     <tr>
-                      <th>TT</th>
                       <th>Mã xã</th>
                       <th>Tên xã</th>
                       <th>Tên huyện</th>
@@ -63,7 +62,6 @@
                     <?php if($xas): ?>
                     <?php foreach($xas as $user): ?>
                         <tr>
-                        <td><?php echo $user['id']; ?></td>
                         <td><?php echo $user['MaXa']; ?></td>
                         <td><?php echo $user['TenXa']; ?></td>
                         <td><?php echo $user['TenHuyen']; ?></td>
