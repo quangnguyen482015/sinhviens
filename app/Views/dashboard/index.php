@@ -30,7 +30,7 @@
               <div class="inner">
                 <h3>150</h3>
 
-                <p>Đầu lớp</p>
+                <p>Sinh viên đang học</p>
               </div>
               <div class="icon">
                 <i class="ion ion-bag"></i>
@@ -60,7 +60,7 @@
               <div class="inner">
                 <h3>44</h3>
 
-                <p>Sinh viên đang học</p>
+                <p>Sinh viên thôi học</p>
               </div>
               <div class="icon">
                 <i class="ion ion-person-add"></i>
@@ -75,7 +75,7 @@
               <div class="inner">
                 <h3>65</h3>
 
-                <p>Sinh viên thôi học</p>
+                <p>Sinh viên tốt nghiệp</p>
               </div>
               <div class="icon">
                 <i class="ion ion-pie-graph"></i>
