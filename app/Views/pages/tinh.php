@@ -20,6 +20,11 @@
             </ol>
           </div>
         </div>
+        <div class="card-footer clearfix">
+          <button type="button" class="btn btn-primary float-right">
+            <i class="fas fa-plus"></i> Thêm mới</button>
+        </div>
+
       </div><!-- /.container-fluid -->
     </section>
 
