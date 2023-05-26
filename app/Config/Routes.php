@@ -38,6 +38,8 @@ $routes->get('/tables/simple/', 'Tables::simple');
 $routes->get('/pages/profile/', 'Pages::profile');
 
 $routes->get('/dashboard/tinh/', 'Tinh::index');
+$routes->get('/dashboard/tinh/themtinh', 'Tinh::themTinh');
+$routes->get('/dashboard/tinh/themtinh/them', 'Tinh::them_Tinh');
 $routes->get('/dashboard/quan-huyen/', 'Huyen::index');
 $routes->get('/dashboard/phuong-xa/', 'Xa::index');
 $routes->get('/dashboard/dan-toc/', 'Dantoc::index');

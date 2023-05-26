@@ -18,8 +18,21 @@ class Tinh extends BaseController
 
         return view('pages/tinh', $data);
     }
+    
     public function themTinh()
     {
         return view('pages/themtinh');
+    }
+
+    public function them_Tinh()
+    {
+        $tinhmodel = new Tinh_Model();
+        $data = [
+            'MaTinh' => $this->request->getVar('matinh'),
+            'TenTinh'  => $this->request->getVar('tentinh'),
+        ];
+        $tinhmodel->insert($data);
+        
+        return $this->response->redirect(site_url('pages/tinh'));
     }
 }
