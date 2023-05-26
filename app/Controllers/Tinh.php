@@ -32,7 +32,7 @@ class Tinh extends BaseController
             'TenTinh'  => $this->request->getVar('tentinh'),
         ];
         $tinhmodel->insert($data);
-        
+
         return $this->response->redirect(site_url('pages/tinh'));
     }
 }
